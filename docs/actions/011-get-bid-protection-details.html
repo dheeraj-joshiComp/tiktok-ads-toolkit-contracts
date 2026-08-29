@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_GET_BID_PROTECTION_DETAILS">
+  <title>Get bid protection history · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>11 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Get bid protection history</h1>
+  <p class="slug"><code>TIKTOK_ADS_GET_BID_PROTECTION_DETAILS</code></p>
+  <div class="badges"><span class="badge method-get">GET</span><span class="badge">Scope 1</span><span class="badge">Ad Account Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>GET /report/bid_protection/detail/get</code></strong></div>
+  <div><span>Encoding</span><strong>query string</strong></div>
+  <div><span>Ability hint</span><strong>reads</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>5 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>advertiser_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data_level</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td>allowed: CAMPAIGN, ADGROUP</td></tr><tr><td><code>query_ids</code></td><td><code>query</code></td><td><code>string[]</code></td><td>required</td><td>cross-field: when start_date to 2026-08-01 and end_date to 2026-08-11 (a 10-day range), the maximum number of IDs you can specify in query_ids is 20 (200 divided by 10)<br>rule: The maximum allowed size is 200 divided by the time range you define using start_date and end_date<br>rule: For example, if you set start_date to 2026-08-01 and end_date to 2026-08-11 (a 10-day range), the maximum number of IDs you can specify in query_ids is 20 (200 divided by 10)<br>rule: All IDs must belong to the same advertiser</td></tr><tr><td><code>start_date</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td>rule: The start date for your bid protection history query, in the format of YYYY-MM-DD (ad account timezone)<br>rule: Ensure the start date is within the past 60 days and is earlier than or equal to your end_date</td></tr><tr><td><code>end_date</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td>rule: The end date for your bid protection history query, in the format of YYYY-MM-DD (ad account timezone)<br>rule: Ensure the end date is within 60 days after your start_date and is later than or equal to the start_date</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>12 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.bid_protection_records</code></td><td><code>object[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.bid_protection_records[].data_level</code></td><td><code>string</code></td><td>unspecified</td><td>allowed: CAMPAIGN, ADGROUP</td></tr><tr><td><code>data.bid_protection_records[].query_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.bid_protection_records[].record_date</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The date when the record was generated, in the format of YYYY-MM-DD (ad account timezone)</td></tr><tr><td><code>data.bid_protection_records[].bid_protection_daily_status</code></td><td><code>string</code></td><td>unspecified</td><td>allowed: UNDER_PROTECTION, INELIGIBLE, CONFIRMING, PAYMENT_COMPLETE, TARGET_MET</td></tr><tr><td><code>data.bid_protection_records[].status_detail</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.bid_protection_records[].credit_amount</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.bid_protection_records[].currency</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The currency for the ad credits amount, in the format of ISO 4217 currency code</td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Eligible campaign with bid-protection history</p>
+    <p><strong>Live boundary:</strong> Read-only call permitted after fixture discovery</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>advertiser_id</code></li><li><code>data_level</code></li><li><code>end_date</code></li><li><code>query_ids</code></li><li><code>start_date</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1874392516418561" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1874392516418561</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">a1424d681dc7fa60f809838d01eb0bd5ac73c3b4dcdfc9c984a86b3229b4cbb4</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/011_get_report_bid_protection_detail_get.md">011_get_report_bid_protection_detail_get.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="010-create-business-center-organization-account.html">← Previous</a><a href="012-get-bid-protection-statuses.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

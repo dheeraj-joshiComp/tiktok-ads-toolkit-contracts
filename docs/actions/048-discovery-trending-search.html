@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_DISCOVERY_TRENDING_SEARCH">
+  <title>Get trending search keywords · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>48 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Get trending search keywords</h1>
+  <p class="slug"><code>TIKTOK_ADS_DISCOVERY_TRENDING_SEARCH</code></p>
+  <div class="badges"><span class="badge method-get">GET</span><span class="badge">Scope 6</span><span class="badge">Creative Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>GET /discovery/trending/search</code></strong></div>
+  <div><span>Encoding</span><strong>query string</strong></div>
+  <div><span>Ability hint</span><strong>reads</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>2 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>business_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>is_personalized</code></td><td><code>query</code></td><td><code>boolean</code></td><td>optional</td><td>default: false</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>5 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.search_keywords</code></td><td><code>string[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Provider-eligible advertiser and endpoint-specific IDs from prior read actions</p>
+    <p><strong>Live boundary:</strong> Read-only call permitted after fixture discovery</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>business_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1832798345014338" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1832798345014338</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">1372cc3165cff55d0688cf5dbd3587b78b35f261b325abb0e0eb8348ba71c199</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/048_get_discovery_trending_search.md">048_get_discovery_trending_search.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="047-discovery-cml-video-list.html">← Previous</a><a href="049-discovery-trending-search-keyword.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

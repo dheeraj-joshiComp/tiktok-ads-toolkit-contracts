@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_DISCOVERY_CML_TRENDING_LIST">
+  <title>Get popular tracks from the Commercial Music Library · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>46 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Get popular tracks from the Commercial Music Library</h1>
+  <p class="slug"><code>TIKTOK_ADS_DISCOVERY_CML_TRENDING_LIST</code></p>
+  <div class="badges"><span class="badge method-get">GET</span><span class="badge">Scope 6</span><span class="badge">Creative Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>GET /discovery/cml/trending_list</code></strong></div>
+  <div><span>Encoding</span><strong>query string</strong></div>
+  <div><span>Ability hint</span><strong>reads</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>4 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>business_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>genre</code></td><td><code>query</code></td><td><code>string</code></td><td>optional</td><td>default: ALL<br>allowed: ALL, ROCK, POP, LATIN, METAL, ELECTRONIC, HIP_HOP/RAP, ALTERNATIVE/INDIE, FOLK, R&amp;B/SOUL, COUNTRY, CLASSICAL, JAZZ, REGGAE, CHILDHOOD, BLUES, EASY_LISTENING, NEW_AGE, WORLD_MUSIC, EXPERIMENTAL, DEVOTIONAL, CHINESE_TRADITION, 8_BIT, A_CAPPELLA, AFRO-POP, ALTERNATIVE_HIP_HOP, ALTERNATIVE_ROCK, AMBIENT, ARABIC_POP, BASS_HOUSE, BGM, BOOMBAP, BOSSA_NOVA, BRAZILIAN_FUNK_STYLE, BUDDHIST_MUSIC, CANTOPOP, CELTIC_POP, CHAMBER_MUSIC, CHILL_BEATS, CHILLOUT, CHINESE_FOLK, CHINESE_OPERA, CHINESE_POP, CHINESE_STYLE, CHINOISERIE_ELECTRONIC, CHINOISERIE_RAP, CHRISTIAN_MUSIC, CONTEMPORARY_R&amp;B, COUNTRY_POP, DANCE_POP, DISCO, DJ, DRUM&amp;BASS, DUBSTEP, EDM, EDM_TRAP, ELECTRO_POP, EPIC, FOLK_POP, FUNK, FUTURE_BASS, GOSPEL, GUFENG_MUSIC, HARD_ROCK, HIP_HOUSE, HOLIDAY_MUSIC, HOUSE, INDIAN_POP, INDIE_FOLK, INDIE_POP, INDIE_ROCK, INSTRUMENTAL_HIP_HOP, INSTRUMENTAL_ROCK, IRISH_FOLK, J_ROCK, JAPANESE_TRADITIONAL_MUSIC, JAZZ_FUSION, JAZZ_HIP_HOP, JAZZ_POP, J-POP, K-POP, LATIN_POP, LO-FI, MC, NOISE, OLD_SCHOOL, OTHERS, POP_RAP, POP_ROCK, POP_SOUL, PSYCHEDELIC_ROCK, PUNK, R&amp;B_RAP, REGGAETON, RUSSIAN_POP, SERTANEJO, SON_CUBANO, SOUL, SOUNDTRACK, SYMPHONY, SYNTH_POP, TANGO, TECHNO, TEEN_POP, TRADITIONAL_CHINESE_FOLK, TRANCE, TRAP_RAP, TRIP_HOP, TROPICAL_HOUSE, TURKISH_POP</td></tr><tr><td><code>country_code</code></td><td><code>query</code></td><td><code>string</code></td><td>optional</td><td>default: US</td></tr><tr><td><code>date_range</code></td><td><code>query</code></td><td><code>string</code></td><td>optional</td><td>allowed: 1DAY, 7DAY, 30DAY, 90DAY<br>default: 7DAY</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>24 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list</code></td><td><code>object[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].commercial_music_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].commercial_music_name</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].duration</code></td><td><code>integer</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].thumbnail_url</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].artist</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].preview_url</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].genres</code></td><td><code>string[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].rank_position</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_history</code></td><td><code>object[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_history[].date</code></td><td><code>string</code></td><td>unspecified</td><td>rule: Date, in the format of YYYY-MM-DD</td></tr><tr><td><code>data.list[].trending_history[].rank_position_daily</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].full_duration_song_clip</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].full_duration_song_clip.preview_url</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].full_duration_song_clip.duration</code></td><td><code>integer</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].full_duration_song_clip.song_clip_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_song_clip</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_song_clip.preview_url</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_song_clip.duration</code></td><td><code>integer</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.list[].trending_song_clip.song_clip_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Provider-eligible advertiser and endpoint-specific IDs from prior read actions</p>
+    <p><strong>Live boundary:</strong> Read-only call permitted after fixture discovery</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>business_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1825119063013505" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1825119063013505</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">fd021b078d09ea4c05a81fd64f59b01208f0759c602faf5deda715359fdec8dc</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/046_get_discovery_cml_trending_list.md">046_get_discovery_cml_trending_list.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="045-creative-pre-review-task-get.html">← Previous</a><a href="047-discovery-cml-video-list.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

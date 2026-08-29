@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_BUSINESS_SPARK_AD_CREATE">
+  <title>Create a campaign, an ad group, and a Spark Ad in one step · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>13 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Create a campaign, an ad group, and a Spark Ad in one step</h1>
+  <p class="slug"><code>TIKTOK_ADS_BUSINESS_SPARK_AD_CREATE</code></p>
+  <div class="badges"><span class="badge method-post">POST</span><span class="badge">Scope 2</span><span class="badge">Ads Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>POST /business/spark_ad/create</code></strong></div>
+  <div><span>Encoding</span><strong>application/json</strong></div>
+  <div><span>Ability hint</span><strong>creates-or-starts-job</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>26 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>advertiser_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>campaign_name</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>length: 512 characters<br>rule: Length limit: 512 characters<br>rule: Emojis are not supported</td></tr><tr><td><code>objective_type</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: REACH, TRAFFIC, VIDEO_VIEWS, ENGAGEMENT</td></tr><tr><td><code>adgroup_name</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>length: 512 characters<br>rule: Length limit: 512 characters<br>rule: Emojis are not supported</td></tr><tr><td><code>saved_audience_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>rule: Either saved_audience_id or location_ids is required<br>rule: Before using this field, call /dmp/saved_audience/create/ to create a Saved Audience and get the Saved Audience ID in response</td></tr><tr><td><code>location_ids</code></td><td><code>json_body</code></td><td><code>string[]</code></td><td>optional</td><td>size: 3,000<br>rule: Either saved_audience_id or location_ids is required</td></tr><tr><td><code>gender</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: GENDER_FEMALE, GENDER_MALE, GENDER_UNLIMITED</td></tr><tr><td><code>age_groups</code></td><td><code>json_body</code></td><td><code>string[]</code></td><td>optional</td><td>allowed: AGE_13_17, AGE_18_24, AGE_25_34, AGE_35_44, AGE_45_54, AGE_55_100</td></tr><tr><td><code>budget_mode</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: BUDGET_MODE_TOTAL, BUDGET_MODE_DAY<br>rule: If this field is set to BUDGET_MODE_TOTAL, then schedule_type must be SCHEDULE_START_END, which requires an end date (schedule_end_time)</td></tr><tr><td><code>budget</code></td><td><code>json_body</code></td><td><code>float</code></td><td>optional</td><td><span class="muted">None documented</span></td></tr><tr><td><code>schedule_type</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: SCHEDULE_START_END, SCHEDULE_FROM_NOW<br>rule: If budget_mode is BUDGET_MODE_TOTAL, this field must be set to SCHEDULE_START_END<br>rule: SCHEDULE_FROM_NOW: To run the campaign continuously after the scheduled start time</td></tr><tr><td><code>schedule_start_time</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>rule: Schedule start time (UTC+0), in the format of YYYY-MM-DD HH:MM:SS<br>rule: The start time can be up to 12 hours earlier than the current time, but cannot be later than 2028-01-01 00:00:00</td></tr><tr><td><code>schedule_end_time</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>rule: Required when schedule_type is SCHEDULE_START_END<br>rule: Schedule end time (UTC+0), in the format of YYYY-MM-DD HH:MM:SS<br>rule: The end time cannot be later than 2038-01-01 00:00:00</td></tr><tr><td><code>optimization_goal</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>mapping: REACH=&gt;REACH; TRAFFIC=&gt;CLICK|TRAFFIC_LANDING_PAGE_VIEW; VIDEO_VIEWS=&gt;ENGAGED_VIEW; ENGAGEMENT=&gt;FOLLOWERS|PAGE_VISIT</td></tr><tr><td><code>frequency</code></td><td><code>json_body</code></td><td><code>number</code></td><td>optional</td><td>all-of: frequency range: 1–1,000. || frequency_schedule: 1–30 (days).<br>rule: Required when objective_type is REACH<br>rule: Frequency, the maximum number of times a user can see your ad within a given period<br>rule: The following conditions should be both met: frequency range: 1–1,000<br>rule: For instance, frequency = 2 and frequency_schedule = 3 ensure ads are shown no more than twice every three days</td></tr><tr><td><code>frequency_schedule</code></td><td><code>json_body</code></td><td><code>number</code></td><td>optional</td><td>all-of: frequency range: 1–1,000. || frequency_schedule: 1–30 (days).<br>rule: Required when objective_type is REACH<br>rule: The following conditions should be both met: frequency range: 1–1,000<br>rule: For instance, frequency = 2 and frequency_schedule = 3 ensure ads are shown no more than twice every three days</td></tr><tr><td><code>bid_type</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: BID_TYPE_CUSTOM, BID_TYPE_NO_BID<br>default: BID_TYPE_NO_BID<br>rule: BID_TYPE_NO_BID: Maximum Delivery</td></tr><tr><td><code>bid_price</code></td><td><code>json_body</code></td><td><code>number</code></td><td>optional</td><td>all-of: optimization_goal is REACH, CLICK, PAGE_VISIT, or ENGAGED_VIEW. || bid_type is BID_TYPE_CUSTOM.<br>rule: Required when the following conditions are both met: optimization_goal is REACH, CLICK, PAGE_VISIT, or ENGAGED_VIEW</td></tr><tr><td><code>conversion_bid_price</code></td><td><code>json_body</code></td><td><code>float</code></td><td>optional</td><td>all-of: optimization_goal is TRAFFIC_LANDING_PAGE_VIEW, or FOLLOWERS. || bid_type is BID_TYPE_CUSTOM.<br>rule: Required when the following conditions are both met: optimization_goal is TRAFFIC_LANDING_PAGE_VIEW, or FOLLOWERS</td></tr><tr><td><code>ad_name</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>length: 512 characters<br>rule: The format of the auto-generated ad name is ad ID (ad_id)<br>rule: Length limit: 512 characters<br>rule: Emojis are not supported</td></tr><tr><td><code>identity_type</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>allowed: AUTH_CODE, TT_USER, BC_AUTH_TT</td></tr><tr><td><code>identity_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td><span class="muted">None documented</span></td></tr><tr><td><code>identity_authorized_bc_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>rule: Required when identity_type is BC_AUTH_TT</td></tr><tr><td><code>tiktok_item_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td><span class="muted">None documented</span></td></tr><tr><td><code>call_to_action</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>rule: Required when optimization_goal is CLICK, TRAFFIC_LANDING_PAGE_VIEW, or PAGE_VISIT<br>allowed: APPLY_NOW, BOOK_NOW, CALL_NOW, CHECK_AVAILABLILITY, CONTACT_US, DOWNLOAD_NOW, EXPERIENCE_NOW, GET_QUOTE, GET_SHOWTIMES, GET_TICKETS_NOW, INSTALL_NOW, INTERESTED, LEARN_MORE, LISTEN_NOW, ORDER_NOW, PLAY_GAME, PREORDER_NOW, READ_MORE, SEND_MESSAGE, SHOP_NOW, SIGN_UP, SUBSCRIBE, VIEW_NOW, VIEW_PROFILE, VISIT_STORE, WATCH_LIVE, WATCH_NOW, JOIN_THIS_HASHTAG, SHOOT_WITH_THIS_EFFECT, VIEW_VIDEO_WITH_THIS_EFFECT</td></tr><tr><td><code>landing_page_url</code></td><td><code>json_body</code></td><td><code>string</code></td><td>optional</td><td>any-of: optimization_goal is CLICK, TRAFFIC_LANDING_PAGE_VIEW, or PAGE_VISIT. || optimization_goal is REACH or ENGAGED_VIEW and call_to_action is specified.<br>rule: Required in any of the following conditions: optimization_goal is CLICK, TRAFFIC_LANDING_PAGE_VIEW, or PAGE_VISIT<br>rule: Not supported when optimization_goal is FOLLOWERS or PAGE_VISIT</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>7 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.campaign_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.adgroup_id</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The ID of the ad group created within the campaign</td></tr><tr><td><code>data.ad_id</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The ID of the Spark Ad created within the ad group</td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Authorized TikTok identity/post and a disposable non-delivering campaign fixture</p>
+    <p><strong>Live boundary:</strong> Implementation and mocked contract tests only in this batch; no live POST</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>advertiser_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1829744071179330" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1829744071179330</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">e79299d9800b72d9552be44b3ef51c2755550987aec87225d8e739c18028a3d2</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/013_post_business_spark_ad_create.md">013_post_business_spark_ad_create.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="012-get-bid-protection-statuses.html">← Previous</a><a href="014-campaign-gmv-max-creative-update.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

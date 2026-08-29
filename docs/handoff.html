@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TikTok Ads contract evidence">
+  <title>Yang handoff · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./index.html">Actions</a>
+        <a href="./blocked.html">Blocked</a>
+        <a href="./sources.html">Sources</a>
+        <a href="./handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<section class="hero compact"><p class="eyebrow">Implementation handoff</p><h1>Yang execution order</h1><p class="lede">Use one batch at a time in the existing Mercury PR. Stop after each accepted SHA so independent review can catch drift before the next batch compounds it.</p></section>
+<section class="steps"><ol><li>Compare the current PR head with audited SHA <code>9f35c86a6ec3d56fe442046282803b79206f97a5</code>.</li><li>Read the machine manifest and permission map.</li><li>Run Prompt 1 only.</li><li>Return the accepted SHA and focused test evidence.</li><li>Insert that SHA into the next prompt's placeholder.</li><li>Do not merge; hand back the final SHA for preview QA.</li></ol></section>
+<section><div class="section-heading"><div><p class="eyebrow">Ten checkpoints</p><h2>Batch map</h2></div><a href="../yang/implementation-prompts.md">Open full prompts</a></div><div class="table-wrap"><table><thead><tr><th>Batch</th><th>Family</th><th>Actions</th><th>Tool slugs</th></tr></thead><tbody><tr><td>P1</td><td>Ad Account GET actions</td><td>8</td><td><code>TIKTOK_ADS_GET_ASSET_BINDING_QUOTA</code><br><code>TIKTOK_ADS_LIST_BUSINESS_CENTER_ACCOUNT_COSTS</code><br><code>TIKTOK_ADS_GET_BUSINESS_CENTER_ADVERTISER_ATTRIBUTES</code><br><code>TIKTOK_ADS_GET_ADVERTISER_QUALIFICATION</code><br><code>TIKTOK_ADS_CHECK_UNIONPAY_VERIFICATION_REQUIREMENT</code><br><code>TIKTOK_ADS_LIST_ADVERTISER_ASSIGNED_TIKTOK_ACCOUNTS</code><br><code>TIKTOK_ADS_GET_BID_PROTECTION_DETAILS</code><br><code>TIKTOK_ADS_GET_BID_PROTECTION_STATUSES</code></td></tr><tr><td>P2</td><td>Ad Account POST actions</td><td>4</td><td><code>TIKTOK_ADS_DISABLE_BUSINESS_CENTER_ADVERTISER</code><br><code>TIKTOK_ADS_ASSIGN_TIKTOK_ACCOUNT_TO_ADVERTISER</code><br><code>TIKTOK_ADS_UNASSIGN_TIKTOK_ACCOUNT_FROM_ADVERTISER</code><br><code>TIKTOK_ADS_CREATE_BUSINESS_CENTER_ORGANIZATION_ACCOUNT</code></td></tr><tr><td>P3</td><td>GMV Max GET actions</td><td>8</td><td><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_GET</code><br><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_LIST</code><br><code>TIKTOK_ADS_GMV_MAX_EXCLUSIVE_AUTHORIZATION_GET</code><br><code>TIKTOK_ADS_GMV_MAX_IDENTITY_GET</code><br><code>TIKTOK_ADS_GMV_MAX_OCCUPIED_CUSTOM_SHOP_ADS_LIST</code><br><code>TIKTOK_ADS_GMV_MAX_STORE_LIST</code><br><code>TIKTOK_ADS_GMV_MAX_STORE_SHOP_AD_USAGE_CHECK</code><br><code>TIKTOK_ADS_GMV_MAX_VIDEO_GET</code></td></tr><tr><td>P4</td><td>GMV Max POST actions</td><td>6</td><td><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_CREATIVE_UPDATE</code><br><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_CREATE</code><br><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_DELETE</code><br><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_UPDATE</code><br><code>TIKTOK_ADS_GMV_MAX_CREATION_CUSTOM_ANCHOR_VIDEO_LIST_DELETE</code><br><code>TIKTOK_ADS_GMV_MAX_CREATION_CUSTOM_ANCHOR_VIDEO_LIST_GET</code></td></tr><tr><td>P5</td><td>Other Ads GET actions</td><td>9</td><td><code>TIKTOK_ADS_CAMPAIGN_QUOTA_INFO</code><br><code>TIKTOK_ADS_CAMPAIGN_LABEL_GET</code><br><code>TIKTOK_ADS_CHANGELOG_GET</code><br><code>TIKTOK_ADS_CHANGELOG_TASK_DOWNLOAD</code><br><code>TIKTOK_ADS_SEARCH_AD_NEGATIVE_KEYWORD_GET</code><br><code>TIKTOK_ADS_SHOWCASE_IDENTITY_GET</code><br><code>TIKTOK_ADS_SHOWCASE_PRODUCT_GET</code><br><code>TIKTOK_ADS_SHOWCASE_REGION_GET</code><br><code>TIKTOK_ADS_SMART_PLUS_CAMPAIGN_COPY_TASK_CHECK</code></td></tr><tr><td>P6</td><td>Other Ads POST actions</td><td>5</td><td><code>TIKTOK_ADS_BUSINESS_SPARK_AD_CREATE</code><br><code>TIKTOK_ADS_SEARCH_AD_NEGATIVE_KEYWORD_ADD</code><br><code>TIKTOK_ADS_SEARCH_AD_NEGATIVE_KEYWORD_DELETE</code><br><code>TIKTOK_ADS_SMART_PLUS_ADGROUP_BUDGET_UPDATE</code><br><code>TIKTOK_ADS_SMART_PLUS_CAMPAIGN_COPY_TASK_CREATE</code></td></tr><tr><td>P7</td><td>Creative GET actions</td><td>8</td><td><code>TIKTOK_ADS_CREATIVE_AUTO_MESSAGE_GET</code><br><code>TIKTOK_ADS_CREATIVE_PRE_REVIEW_TASK_GET</code><br><code>TIKTOK_ADS_DISCOVERY_CML_TRENDING_LIST</code><br><code>TIKTOK_ADS_DISCOVERY_CML_VIDEO_LIST</code><br><code>TIKTOK_ADS_DISCOVERY_TRENDING_SEARCH</code><br><code>TIKTOK_ADS_DISCOVERY_TRENDING_SEARCH_KEYWORD</code><br><code>TIKTOK_ADS_FILE_NAME_CHECK</code><br><code>TIKTOK_ADS_VIDEO_FIX_TASK_GET</code></td></tr><tr><td>P8</td><td>Creative POST actions</td><td>5</td><td><code>TIKTOK_ADS_CREATIVE_ASSET_DELETE</code><br><code>TIKTOK_ADS_CREATIVE_AUTO_MESSAGE_CREATE</code><br><code>TIKTOK_ADS_CREATIVE_PRE_REVIEW_TASK_CREATE</code><br><code>TIKTOK_ADS_SMART_PLUS_AD_PREVIEW</code><br><code>TIKTOK_ADS_VIDEO_FIX_TASK_CREATE</code></td></tr><tr><td>P9</td><td>Reporting and Catalog GET actions</td><td>7</td><td><code>TIKTOK_ADS_CATALOG_INSIGHT_PRODUCT_GET</code><br><code>TIKTOK_ADS_CATALOG_VIDEO_GET</code><br><code>TIKTOK_ADS_CREATIVE_FATIGUE_GET</code><br><code>TIKTOK_ADS_DIAGNOSTIC_CATALOG</code><br><code>TIKTOK_ADS_DIAGNOSTIC_CATALOG_PRODUCT_TASK_GET</code><br><code>TIKTOK_ADS_REPORT_AD_BENCHMARK_GET</code><br><code>TIKTOK_ADS_REPORT_VIDEO_PERFORMANCE_GET</code></td></tr><tr><td>P10</td><td>Catalog POST actions</td><td>3</td><td><code>TIKTOK_ADS_CATALOG_SET_UPLOAD</code><br><code>TIKTOK_ADS_CATALOG_VIDEO_FILE</code><br><code>TIKTOK_ADS_DIAGNOSTIC_CATALOG_PRODUCT_TASK_CREATE</code></td></tr></tbody></table></div></section>
+<section class="callout"><strong>Stop boundary:</strong> implement only the 63 manifest entries. The blocked ledger is not permission to infer the missing contracts.</section>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

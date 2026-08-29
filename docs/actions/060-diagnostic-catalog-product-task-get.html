@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_DIAGNOSTIC_CATALOG_PRODUCT_TASK_GET">
+  <title>Download asynchronous catalog product diagnostic information · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>60 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Download asynchronous catalog product diagnostic information</h1>
+  <p class="slug"><code>TIKTOK_ADS_DIAGNOSTIC_CATALOG_PRODUCT_TASK_GET</code></p>
+  <div class="badges"><span class="badge method-get">GET</span><span class="badge">Scope 9</span><span class="badge">DPA Catalog Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>GET /diagnostic/catalog/product/task/get</code></strong></div>
+  <div><span>Encoding</span><strong>query string</strong></div>
+  <div><span>Ability hint</span><strong>reads</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>3 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>catalog_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>bc_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>task_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>6 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.status</code></td><td><code>string</code></td><td>unspecified</td><td>allowed: SUCCEED, PROCESSING, FAILED</td></tr><tr><td><code>data.diagnostic_file_url</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Authorized Business Center catalog with the required products, videos, feed, or diagnostics</p>
+    <p><strong>Live boundary:</strong> Read-only call permitted after fixture discovery</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>bc_id</code></li><li><code>catalog_id</code></li><li><code>task_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1771117294731266" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1771117294731266</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">f24df2e0e8cb2a7c0570010cb7eb5d1cc377dd52ab923e29c7c44a59e9101622</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/060_get_diagnostic_catalog_product_task_get.md">060_get_diagnostic_catalog_product_task_get.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="059-diagnostic-catalog-product-task-create.html">← Previous</a><a href="061-creative-fatigue-get.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

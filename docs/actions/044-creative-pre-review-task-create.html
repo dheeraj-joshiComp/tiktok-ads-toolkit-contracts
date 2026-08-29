@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_CREATIVE_PRE_REVIEW_TASK_CREATE">
+  <title>Create a creative pre-review task · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>44 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Create a creative pre-review task</h1>
+  <p class="slug"><code>TIKTOK_ADS_CREATIVE_PRE_REVIEW_TASK_CREATE</code></p>
+  <div class="badges"><span class="badge method-post">POST</span><span class="badge">Scope 6</span><span class="badge">Creative Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>POST /creative/pre_review/task/create</code></strong></div>
+  <div><span>Encoding</span><strong>application/json</strong></div>
+  <div><span>Ability hint</span><strong>creates-or-starts-job</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>6 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>advertiser_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>material_list</code></td><td><code>json_body</code></td><td><code>object[]</code></td><td>required</td><td>size: 1-5<br>rule: Size range: 1-5</td></tr><tr><td><code>material_list[].material_type</code></td><td><code>json_body</code></td><td><code>string</code></td><td>required</td><td>allowed: VIDEO, IMAGE, AD_TEXT, LANDING_PAGE_URL</td></tr><tr><td><code>material_list[].material_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>required</td><td>rule: To search for video IDs within your ad account, use /file/video/ad/search/ and check the returned video_id<br>rule: To search for image IDs within your ad account, use /file/image/ad/search/ and check the returned image_id</td></tr><tr><td><code>location_codes</code></td><td><code>json_body</code></td><td><code>string[]</code></td><td>required</td><td>size: 1<br>allowed: AD, AE, AG, AI, AL, AO, AR, AT, AU, AW, AZ, BA, BB, BD, BE, BG, BH, BL, BM, BO, BQ, BR, BS, BY, BZ, CA, CD, CH, CL, CO, CR, CU, CV, CW, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ER, ES, FI, FO, FR, GB, GD, GE, GF, GG, GI, GL, GN, GP, GQ, GR, GT, GW, HK, HN, HR, HT, HU, ID, IE, IL, IM, IN, IQ, IS, IT, JE, JM, JO, JP, KE, KH, KM, KN, KR, KW, KY, KZ, LB, LC, LI, LK, LT, LU, LV, LY, MA, MC, MD, ME, MF, MK, MM, MO, MQ, MR, MS, MT, MX, MY, MZ, NG, NI, NL, NO, NP, NZ, OM, PA, PE, PF, PH, PK, PL, PM, PR, PS, PT, PY, QA, RO, RS, RU, SA, SD, SE, SG, SI, SJ, SK, SM, SO, SS, ST, SV, SX, SY, TC, TD, TF, TH, TN, TR, TT, TW, UA, US, UY, UZ, VC, VE, VG, VI, VN, YE, ZA</td></tr><tr><td><code>is_ecommerce</code></td><td><code>json_body</code></td><td><code>boolean</code></td><td>optional</td><td>allowed: true, false<br>default: false</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>5 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.pre_review_task_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Advertiser-owned disposable creative/video/file fixture</p>
+    <p><strong>Live boundary:</strong> Implementation and mocked contract tests only in this batch; no live POST</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>advertiser_id</code></li><li><code>location_codes</code></li><li><code>material_list</code></li><li><code>material_list[].material_id</code></li><li><code>material_list[].material_type</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1874110632584577" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1874110632584577</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">329b6d2fdb16acc3c146a1fdddba0294a5a57021d4debb19def06659a1a22723</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/044_post_creative_pre_review_task_create.md">044_post_creative_pre_review_task_create.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="043-creative-auto-message-get.html">← Previous</a><a href="045-creative-pre-review-task-get.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

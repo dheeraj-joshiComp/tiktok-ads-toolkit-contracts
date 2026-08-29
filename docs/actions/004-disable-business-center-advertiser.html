@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_DISABLE_BUSINESS_CENTER_ADVERTISER">
+  <title>Disable an ad account · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>4 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Disable an ad account</h1>
+  <p class="slug"><code>TIKTOK_ADS_DISABLE_BUSINESS_CENTER_ADVERTISER</code></p>
+  <div class="badges"><span class="badge method-post">POST</span><span class="badge">Scope 1</span><span class="badge">Ad Account Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>POST /bc/advertiser/disable</code></strong></div>
+  <div><span>Encoding</span><strong>application/json</strong></div>
+  <div><span>Ability hint</span><strong>destructive-or-status-changing</strong></div>
+  <div><span>Permission evidence</span><strong>direct_permission_table_mapping</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>2 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>bc_id</code></td><td><code>json_body</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>advertiser_ids</code></td><td><code>json_body</code></td><td><code>string[]</code></td><td>required</td><td>size: 1</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>6 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.disabled_advertiser_ids</code></td><td><code>string[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.failed_infos</code></td><td><code>map</code></td><td>unspecified</td><td>allowed: DELIVERING, UNPAID_BILL, SUSPENDED, UNFINISHED_TRANSFER, AUTOPAY_UNBILLED<br>rule: Enum values: DELIVERING: The ad account has ads that are being delivered within 3 days</td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Authorized Business Center and advertiser/asset fixture with the required role</p>
+    <p><strong>Live boundary:</strong> Implementation and mocked contract tests only in this batch; no live POST</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>advertiser_ids</code></li><li><code>bc_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1752349244331009" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1752349244331009</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">74d802fe5befc9bffbe400e6aa3d829a47780eb8ca0b07e0d1c6daeadeb675f8</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/004_post_bc_advertiser_disable.md">004_post_bc_advertiser_disable.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="003-get-business-center-advertiser-attributes.html">← Previous</a><a href="005-get-advertiser-qualification.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>

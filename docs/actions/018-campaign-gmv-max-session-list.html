@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Normalized contract for TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_LIST">
+  <title>Get max delivery or creative boost sessions within a campaign · TikTok Ads contract kit</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="TikTok Ads contract kit home">
+        <span class="brand-mark" aria-hidden="true">TA</span>
+        <span>TikTok Ads contract kit</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">Actions</a>
+        <a href="../blocked.html">Blocked</a>
+        <a href="../sources.html">Sources</a>
+        <a href="../handoff.html">Yang handoff</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+<div class="breadcrumbs"><a href="../index.html">Actions</a><span>/</span><span>18 of 63</span></div>
+<section class="hero compact">
+  <p class="eyebrow">Normalized official contract</p>
+  <h1>Get max delivery or creative boost sessions within a campaign</h1>
+  <p class="slug"><code>TIKTOK_ADS_CAMPAIGN_GMV_MAX_SESSION_LIST</code></p>
+  <div class="badges"><span class="badge method-get">GET</span><span class="badge">Scope 2</span><span class="badge">Ads Management</span></div>
+</section>
+<section class="metadata-grid" aria-label="Action metadata">
+  <div><span>Wire endpoint</span><strong><code>GET /campaign/gmv_max/session/list</code></strong></div>
+  <div><span>Encoding</span><strong>query string</strong></div>
+  <div><span>Ability hint</span><strong>reads</strong></div>
+  <div><span>Permission evidence</span><strong>selected_export_category_plus_first_level_inheritance</strong></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Input</p><h2>Request contract</h2></div><span>2 fields</span></div>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Placement</th><th>Type</th><th>Requiredness</th><th>Constraints</th></tr><tr><td><code>advertiser_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td><span class="muted">None documented</span></td></tr><tr><td><code>campaign_id</code></td><td><code>query</code></td><td><code>string</code></td><td>required</td><td>rule: To filter existing Product GMV Max Campaigns within your ad account, use /gmv_max/campaign/get/ and set filtering to {&quot;gmv_max_promotion_types&quot;:[&quot;PRODUCT_GMV_MAX&quot;]}</td></tr></table></div>
+</section>
+<section>
+  <div class="section-heading"><div><p class="eyebrow">Output</p><h2>Response contract</h2></div><span>14 fields</span></div>
+  <p class="callout">Provider response nullability is unspecified. Model documented fields permissively unless live evidence proves otherwise.</p>
+  <div class="table-wrap"><table><tr><th>Field</th><th>Type</th><th>Presence</th><th>Constraints</th></tr><tr><td><code>code</code></td><td><code>number</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>message</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>request_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data</code></td><td><code>object</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.session_list</code></td><td><code>object[]</code></td><td>unspecified</td><td>rule: The list of max delivery sessions for products or creative boost sessions for videos within the Product GMV Max Campaign</td></tr><tr><td><code>data.session_list[].campaign_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.session_list[].bid_type</code></td><td><code>string</code></td><td>unspecified</td><td>allowed: NO_BID, CREATIVE_NO_BID</td></tr><tr><td><code>data.session_list[].session_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.session_list[].budget</code></td><td><code>float</code></td><td>unspecified</td><td>rule: Creative Boost is a functionality within Product GMV Max that allows sellers to manually promote specific videos by allocating extra daily budget</td></tr><tr><td><code>data.session_list[].product_list</code></td><td><code>object[]</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.session_list[].product_list[].spu_id</code></td><td><code>string</code></td><td>unspecified</td><td><span class="muted">None documented</span></td></tr><tr><td><code>data.session_list[].schedule_type</code></td><td><code>string</code></td><td>unspecified</td><td>rule: SCHEDULE_FROM_NOW: To enable the max delivery or creative boost mode for the product continuously after the schedule_start_time, until the campaign scheduled end time</td></tr><tr><td><code>data.session_list[].schedule_start_time</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The start time for the max delivery or creative boost mode, in the format of YYYY-MM-DD HH:MM:SS (UTC+0)</td></tr><tr><td><code>data.session_list[].schedule_end_time</code></td><td><code>string</code></td><td>unspecified</td><td>rule: The end time for the max delivery or creative boost mode, in the format of YYYY-MM-DD HH:MM:SS (UTC+0)</td></tr></table></div>
+</section>
+<section class="split">
+  <div>
+    <p class="eyebrow">Runtime</p><h2>Fixture and live boundary</h2>
+    <p><strong>Gate:</strong> Eligible TikTok Shop, owning or authorized Business Center, advertiser, and GMV Max resources</p>
+    <p><strong>Live boundary:</strong> Read-only call permitted after fixture discovery</p>
+    <h3>Required fixture inputs</h3><ul class="compact-list"><li><code>advertiser_id</code></li><li><code>campaign_id</code></li></ul>
+  </div>
+  <div>
+    <p class="eyebrow">Review</p><h2>Warnings</h2><ul><li class="muted">No additional contradiction warning recorded.</li></ul>
+  </div>
+</section>
+<section class="source-panel">
+  <div><p class="eyebrow">Provider evidence</p><h2>Official source</h2></div>
+  <p><a class="button" href="https://business-api.tiktok.com/portal/docs?id=1835246996436162" rel="noreferrer" target="_blank">Open TikTok doc ↗</a></p>
+  <dl>
+    <div><dt>Document ID</dt><dd><code>1835246996436162</code></dd></div>
+    <div><dt>Source-content SHA-256</dt><dd><code class="hash">998acd282c3928c7d14832003656d9ad53e315cee1431a3930af9c08886d65a4</code></dd></div>
+    <div><dt>Markdown contract</dt><dd><a href="../../contracts/018_get_campaign_gmv_max_session_list.md">018_get_campaign_gmv_max_session_list.md</a></dd></div>
+  </dl>
+</section>
+<nav class="pager" aria-label="Action pagination"><a href="017-campaign-gmv-max-session-get.html">← Previous</a><a href="019-campaign-gmv-max-session-update.html">Next →</a></nav>
+</main>
+  <footer>
+    <p>Independent normalized evidence pack. Always re-check the linked official TikTok source before shipping.</p>
+  </footer>
+</body>
+</html>
